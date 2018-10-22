@@ -154,7 +154,7 @@ export default new Router({
       meta: {title: '写文章'}
     },
     {
-      path:'/login',
+      path:'/sign_in',
       component: resolve =>require(['../components/page/Login.vue'],resolve),
       meta:{title:'登陆'}
     },

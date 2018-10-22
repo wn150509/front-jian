@@ -2,13 +2,13 @@
   <div class="sign">
     <div class="logo">
       <a href="/">
-        <img src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo">
+        <img src="https://cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png">
       </a>
     </div>
     <div class="main">
       <h4 class="title">
         <div class="normal-title">
-          <a class="active" href="/login">
+          <a class="active" href="/sign_in">
             <span class="red">登录</span>
           </a>
           <b>·</b>
@@ -25,7 +25,8 @@
             <el-input
               placeholder="手机号或邮箱"
               prefix-icon="el-icon-yonghu"
-              v-model="input21">
+              required
+              v-model="email">
             </el-input>
           </div>
 
@@ -34,7 +35,8 @@
               type="password"
               placeholder="密码"
               prefix-icon="el-icon-mima"
-              v-model="input21">
+              required
+              v-model="password">
             </el-input>
           </div>
 
@@ -52,9 +54,8 @@
             </b-dropdown>
           </div>
 
-          <button class="sign-in-button" id="sign-in-form-submit-btn" type="button">
-            <span id="sign-in-loading"></span>
-            登录
+          <button class="sign-in-button" id="sign-in-form-submit-btn" type="button" @click="onClick">
+            <span id="sign-in-loading"></span>登录
           </button>
         </form>
         <!-- 更多登录方式 -->
@@ -90,9 +91,26 @@
   </div>
 </template>
 <script>
-    export default {
-      name: "Login"
+  export default {
+    data() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
+    methods: {
+      onClick() {
+        var that = this;
+        this.$http
+          .post('http://localhost:8080/user/sign_in', {"email": this.email, "password": this.password})
+          .then(function (response) {
+            //alert(JSON.stringify(response.data.data));
+            localStorage.setItem("loginUser", JSON.stringify(response.data.data))
+            that.$router.push("/")
+          })
+      }
     }
+  }
 </script>
 
 <style scoped>
