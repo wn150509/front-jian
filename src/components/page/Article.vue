@@ -70,7 +70,7 @@
               "comments":2,
               "like":2,
               "pic":'https://upload-images.jianshu.io/upload_images/13308516-ae2abb978f54cf38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000',
-                  'word':'我们继续奋力向前，逆水行舟，被不断地向后推，直至回到往昔岁月。\n' +
+              'word':'我们继续奋力向前，逆水行舟，被不断地向后推，直至回到往昔岁月。\n' +
                   '\n' +
                   '所有的光新靓丽都敌不过时间，并且一去不复返。 \n' +
                   '\n' +

@@ -13,15 +13,29 @@
               投稿
             </div>
             <div class="title">
-              <h3>{{author.name}}</h3>
+              <h3>{{author.nickname}}</h3>
             </div>
             <div class="info">
               <p>
-                <span>{{author.info}}</span>
+                <span>字数{{author.wordsCount}}</span>
+                <span>收获喜欢{{author.likeCount}}</span>
               </p>
             </div>
           </div>
-          <v-article></v-article>
+          <div class="row" v-for="article in works" :key="article.articleId">
+            <div class="col-md-8">
+              <router-link :to=" '/p/'+article.articleId ">
+                <p v-text="article.articleTitle" class="title"></p>
+                <p v-text="article.articleContent" class="content"></p>
+              </router-link>
+              <!--<span v-text="article.nickname" class="nickname"></span>-->
+              <span class="nickname">评论:{{article.articleComment}}</span>
+              <span class="nickname">喜欢:{{article.articleLike}}</span>
+            </div>
+            <div class="col-md-4">
+              <img v-bind:src="article.articlePic" class="picture"/>
+            </div>
+          </div>
         </b-col>
         <b-col cols="4">
           <div>
@@ -35,39 +49,33 @@
           </div>
         </b-col>
       </div>
-
     </div>
 </template>
 
 <script>
-  import vArticle from "../module/Articles"
-
     export default {
-      components:{
-        vArticle
-      },
-
       data() {
         return {
           id: this.$route.params.id,
           author: {},
+          works:[]
         }
+      },
+      created(){
+        var that=this
+        this.$http
+          .get('http://localhost:8080/articles/'+this.$route.params.id)
+          .then(function (response) {
+            that.works=response.data.data
+          })
+        this.$http
+          .get('http://localhost:8080/user/'+this.$route.params.id)
+          .then(function (response) {
+            that.author=response.data.data
+          })
       },
       activated() {
         this.id = this.$route.params.id;
-        console.log(this.id);
-        if (this.id == 0) {
-          var t = {
-            "id":1,
-            "avatar":"https://upload.jianshu.io/users/upload_avatars/3343569/3cd46650-54bc-4383-989f-80aacb0c42fe.jpg",
-            "name":"吴晓布",
-            "info":"写了593.9k字 · 14.8k喜欢",
-            "description":"合抱之木，生于毫末；九层之台，起于累土。"
-          };
-          this.author = t;
-        } else {
-          this.author = {};
-        }
       },
       computed: function () {
         return this.author;
@@ -76,6 +84,23 @@
     }
 </script>
 <style scoped>
+  .picture{
+    width: 130px;
+    height: 100px;
+  }
+  .title{
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+  }
+  .content{
+    font-size: 15px;
+    color: grey;
+  }
+  .nickname{
+    font-size: 11px;
+    color: darkgray;
+  }
   .greyFont{
     color: #969696;
   }
@@ -151,7 +176,6 @@
   .greyFont{
     color: #969696;
   }
-
   .avatar-collection img {
     width: 80px;
     height: 80px;
@@ -159,4 +183,5 @@
     border-radius: 50%;
     margin-left: -10px;
   }
+
 </style>
