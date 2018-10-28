@@ -4,7 +4,7 @@
     <router-link to="/">
       <b-navbar-brand>
         <b-img width="85" height="50"
-               src="https://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png"/>
+               src="../../static/img/logo.png"/>
       </b-navbar-brand>
     </router-link>
 
