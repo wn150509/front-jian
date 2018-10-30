@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-      <img src="https://cdn2.jianshu.io/assets/web/recommend-collection-58f8968955ecbeb8f8f3b4cd95ec76be.png"
-      class="bt">
+      <img src="/static/img/zt.png" class="bt">
       <p class="rh">如何创建并玩转专题？</p>
       <div class="down">
         <b-tabs>
@@ -65,6 +64,9 @@
   }
   .title{
     color: #3C3C3C;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   .col-md-4 {
     text-align: center;
@@ -84,7 +86,7 @@
     margin-top: 80px;
   }
   .bt{
-    width: 960px;
+    width: 1080px;
     height: 100px;
   }
   .rh{

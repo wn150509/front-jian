@@ -22,19 +22,29 @@
             <router-link to="/notifications">消息</router-link>
           </template>
           <b-dropdown-item>
-            <router-link to="/notifications/comments">评论</router-link>
+            <router-link to="/notifications/comments">
+              <i class="far fa-comment-alt" style="color: red"></i>&nbsp;&nbsp;评论
+            </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
-            <router-link to="/notifications/chats">简信</router-link>
+            <router-link to="/notifications/chats">
+              <i class="far fa-envelope" style="color: red"></i>&nbsp;&nbsp;简信
+            </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
-            <router-link to="/notifications/requests">投稿请求</router-link>
+            <router-link to="/notifications/requests">
+              <i class="fas fa-upload" style="color: red"></i>&nbsp;&nbsp;投稿请求
+            </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
-            <router-link to="/notifications/likes">喜欢和赞</router-link>
+            <router-link to="/notifications/likes">
+              <i class="far fa-heart" style="color: red"></i>&nbsp;&nbsp;喜欢和赞
+            </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
-            <router-link to="/notifications/follows">关注</router-link>
+            <router-link to="/notifications/follows">
+              <i class="fas fa-user-plus" style="color: red"></i>&nbsp;&nbsp;关注
+            </router-link>
           </b-dropdown-item>
         </b-nav-item-dropdown>
 
@@ -47,7 +57,7 @@
         </b-nav-item>
 
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2 search-input" type="text" placeholder="Search"/>
+          <b-form-input size="sm" class="mr-sm-2 search-input" type="text" placeholder="搜索"/>
           <font-awesome-icon icon="search" style="color: #999;font-size: 20px;margin-left: -50px;"/>
         </b-nav-form>
       </b-navbar-nav>
@@ -66,19 +76,19 @@
           <!-- Using button-content slot -->
           <b-dropdown-item>
             <router-link to="/u">
-              个人中心
+              <i class="fas fa-user" style="color: red"></i>&nbsp;&nbsp;我的主页
             </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
-            <router-link to="/setting">
-              设置
+            <router-link to="/settings">
+              <i class="fas fa-cog" style="color: red"></i>&nbsp;&nbsp;设置
             </router-link>
           </b-dropdown-item>
           <template slot="button-content">
             <b-img rounded="circle" width="35" height="35" :src="user.avatar"/>
           </template>
           <b-dropdown-item @click="logout">
-            退出
+            <i class="fas fa-sign-out-alt" style="color: red"></i>&nbsp;&nbsp;退出
           </b-dropdown-item>
         </b-nav-item-dropdown>
         <a class="btn write-btn" href="/write">

@@ -6,35 +6,35 @@
             <b-nav-item>
               <router-link to="/notifications/comments">
                 <div class="bat">
-                  <span>评论</span>
+                  <span><i class="far fa-comment-alt" style="color: red"></i>&nbsp;&nbsp;评论</span>
                 </div>
               </router-link>
             </b-nav-item>
             <b-nav-item>
               <router-link to="/notifications/chats">
                 <div class="bat">
-                  <span>简信</span>
+                  <span><i class="far fa-envelope" style="color: red"></i>&nbsp;&nbsp;简信</span>
                 </div>
               </router-link>
             </b-nav-item>
             <b-nav-item>
               <router-link to="/notifications/requests">
                 <div class="bat">
-                  <span>投稿请求</span>
+                  <span><i class="fas fa-upload" style="color: red"></i>&nbsp;&nbsp;投稿请求</span>
                 </div>
               </router-link>
             </b-nav-item>
             <b-nav-item>
               <router-link to="/notifications/likes">
                 <div class="bat">
-                  <span>喜欢和赞</span>
+                  <span><i class="far fa-heart" style="color: red"></i>&nbsp;&nbsp;喜欢和赞</span>
                 </div>
               </router-link>
             </b-nav-item>
             <b-nav-item>
               <router-link to="/notifications/follows">
                 <div class="bat">
-                  <span>关注</span>
+                  <span><i class="fas fa-user-plus" style="color: red"></i>&nbsp;&nbsp;关注</span>
                 </div>
               </router-link>
             </b-nav-item>

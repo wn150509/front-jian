@@ -2,7 +2,7 @@
   <div class="sign">
     <div class="logo">
       <a href="/">
-        <img src="https://cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png">
+        <img src="/static/img/logo.png">
       </a>
     </div>
     <div class="main">
@@ -102,7 +102,9 @@
       onClick() {
         var that = this;
         this.$http
-          .post('http://localhost:8080/user/sign_in', {"email": this.email, "password": this.password})
+          .post('http://localhost:8080/user/sign_in',
+                {"email": this.email,
+                "password": this.password})
           .then(function (response) {
             //alert(JSON.stringify(response.data.data));
             localStorage.setItem("loginUser", JSON.stringify(response.data.data))

@@ -4,7 +4,7 @@
         <div class="col-md-4">
           <div class="top">
             <b-form-select v-model="selected" :options="options" class="xuan"/>
-            <span class="gz">添加关注</span>
+            <span class="gz"><i class="fas fa-user-plus"></i>&nbsp;&nbsp;添加关注</span>
           </div>
           <div class="brand_col">
             <div class="brand_list">
@@ -104,7 +104,7 @@
     margin-left: 30px;
   }
   .gz{
-    margin-left: 60px;
+    margin-left: 30px;
     margin-top: -30px;
   }
   img{

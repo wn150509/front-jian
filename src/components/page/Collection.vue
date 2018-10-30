@@ -24,13 +24,13 @@
         <!--专题文章-->
         <div class="row" v-for="article in topic.articlesList" :key="article.articleId">
           <div class="col-md-8">
-            <router-link :to="'/p/'+article.articleId ">
+            <a :href="'/p/'+article.articleId ">
               <p v-text="article.articleTitle" class="title"></p>
               <p v-text="article.articleContent" class="content"></p>
-            </router-link>
+            </a>
             <span v-text="article.articleAuthor" class="nickname"></span>
-            <span class="nickname">评论:{{article.articleComment}}</span>
-            <span class="nickname">喜欢:{{article.articleLike}}</span>
+            <span class="nickname"><i class="fas fa-comment-alt"></i>{{article.articleComment}}</span>
+            <span class="nickname"><i class="fas fa-heart"></i>{{article.articleLike}}</span><hr/>
           </div>
           <div class="col-md-4">
             <img v-bind:src="article.articlePic" class="picture"/>
@@ -49,8 +49,8 @@
           <div class="title greyFont">关注的人</div>
           <div class="list" v-for="fans in topic.sysUserList" :key="fans.userId">
             <div>
-              <a href="#" class="avatar">
-                <img v-bind:src="fans.avatar">
+              <a :href=" '/ou/'+fans.userId" class="avatar">
+                <img v-bind:src="fans.avatar" v-b-tooltip.hover :title="fans.nickname">
               </a>
             </div>
           </div>
@@ -99,6 +99,9 @@
   .content{
     font-size: 15px;
     color: grey;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   .nickname{
     font-size: 11px;

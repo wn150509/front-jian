@@ -2,14 +2,14 @@
   <div>
     <div class="H">
       <span>推荐作者</span>
-      <span @click="replace" class="hyp">换一批</span>
+      <span @click="replace" class="hyp"><i class="fas fa-sync-alt"></i>&nbsp;&nbsp;换一批</span>
     </div>
     <div>
       <div v-for="index in arr" class="row" style="margin-top: 15px">
         <div class="col-md-2">
-          <router-link :to="'/ou/'+hotUsers[index].userId">
+          <a :href="'/ou/'+hotUsers[index].userId">
             <img :src="hotUsers[index].avatar" class="tx">
-          </router-link>
+          </a>
         </div>
         <div class="col-md-8">
           <div>{{hotUsers[index].nickname}}</div>
@@ -79,7 +79,7 @@
   }
   .hyp{
     color: darkgray;
-    margin-left: 160px;
+    margin-left: 130px;
   }
   .gz{
     color: green;

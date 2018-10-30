@@ -2,13 +2,15 @@
     <div>
       <div class="row" v-for="article in articles" :key="article.articleId">
         <div class="col-md-8">
+          <a :href=" '/p/'+article.articleId">
           <p v-text="article.articleTitle" class="title"></p>
           <p v-text="article.articleContent" class="content"></p>
+          </a>
           <div>
             <span v-text="article.articleAuthor" class="nickname"></span>
-            <span class="nickname">评论{{article.articleComment}}</span>
-            <span class="nickname">喜欢{{article.articleLike}}</span>
-          </div>
+            <span class="nickname"><i class="fas fa-comment-alt"></i>{{article.articleComment}}</span>
+            <span class="nickname"><i class="fas fa-heart"></i>{{article.articleLike}}</span>
+          </div><hr/>
         </div>
         <div class="col-md-4">
           <img v-bind:src="article.articlePic" class="picture"/>
@@ -45,10 +47,14 @@
     font-size: 19px;
     font-weight: bold;
     margin-top: 15px;
+    color: black;
   }
   .content{
     font-size: 15px;
     color: grey;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   .nickname{
     font-size: 11px;

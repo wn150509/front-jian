@@ -6,42 +6,42 @@
         <b-nav-item>
           <router-link to="/settings/basic">
             <div class="bat">
-              <span>基础设置</span>
+              <span><i class="fas fa-list-alt"></i>&nbsp;&nbsp;基础设置</span>
             </div>
           </router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/settings/profile">
             <div class="bat">
-              <span>个人资料</span>
+              <span><i class="fas fa-address-book"></i>&nbsp;&nbsp;个人资料</span>
             </div>
           </router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/settings/weibo-auth">
             <div class="bat">
-            <span>微博认证</span>
+            <span><i class="fas fa-award"></i>&nbsp;&nbsp;微博认证</span>
             </div>
           </router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/settings/blacklist">
             <div class="bat">
-            <span>黑名单</span>
+            <span><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;黑名单</span>
             </div>
           </router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/settings/reward-setting">
             <div class="bat">
-            <span>赞赏设置</span>
+            <span><i class="fas fa-yen-sign"></i>&nbsp;&nbsp;赞赏设置</span>
             </div>
           </router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link to="/settings/misc">
             <div class="bat">
-            <span>账号管理</span>
+            <span><i class="fas fa-cog"></i>&nbsp;&nbsp;账号管理</span>
             </div>
           </router-link>
         </b-nav-item>

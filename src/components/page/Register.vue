@@ -1,6 +1,10 @@
 <template>
   <div class="sign">
-    <div class="logo"><a href="/"><img src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo"></a></div>
+    <div class="logo">
+      <a href="/">
+        <img src="/static/img/logo.png">
+      </a>
+    </div>
     <div class="main">
 
 

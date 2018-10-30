@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <img src="https://cdn2.jianshu.io/assets/web/recommend-author-03cc8798d5cc3f986e49cbcb2eb63079.png"
-         class="bt">
+    <img src="/static/img/zz.png" class="bt">
     <p class="rh">如何成为签约作者？</p>
     <div class="down">
       <div class="row">
@@ -46,6 +45,9 @@
 <style scoped>
   .work{
     font-size: 13px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   .bt{
     width: 1080px;
@@ -57,10 +59,12 @@
   }
   .title{
     color: #3C3C3C;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   .card{
     background-color: #EEEEEE;
-    height: 380px;
   }
   .col-md-4 {
     text-align: center;

@@ -10,43 +10,83 @@
               <span>+关注</span>
             </a>
             <div class="btn btn-hollow js-contribute-button">
-              投稿
+              发简信
             </div>
             <div class="title">
               <h3>{{author.nickname}}</h3>
             </div>
             <div class="info">
-              <p>
-                <span>字数{{author.wordsCount}}</span>
-                <span>收获喜欢{{author.likeCount}}</span>
-              </p>
+              <ul>
+                <li>
+                  <div class="meta-block">
+                    10<br/>
+                    <span class="is">关注&nbsp;></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="meta-block">
+                    120<br/>
+                    <span class="is">粉丝&nbsp;></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="meta-block">
+                    22<br/>
+                    <span class="is">文章&nbsp;></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="meta-block">
+                    {{author.wordsCount}}k<br/>
+                    <span class="is">字数&nbsp;></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="meta-block">
+                    {{author.likeCount}}k<br/>
+                    <span class="is">收获喜欢&nbsp;></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div><br/><hr/>
+
+          <div>
+            <div class="row" v-for="article in works" :key="article.articleId">
+              <div class="col-md-8">
+                <router-link :to=" '/p/'+article.articleId ">
+                  <p v-text="article.articleTitle" class="title"></p>
+                  <p v-text="article.articleContent" class="content"></p>
+                </router-link>
+                <span class="nickname"><i class="fas fa-comment-alt"></i>{{article.articleComment}}</span>
+                <span class="nickname"><i class="fas fa-heart"></i>{{article.articleLike}}</span><hr/>
+              </div>
+              <div class="col-md-4">
+                <img v-bind:src="article.articlePic" class="picture"/>
+              </div>
             </div>
           </div>
-          <div class="row" v-for="article in works" :key="article.articleId">
-            <div class="col-md-8">
-              <router-link :to=" '/p/'+article.articleId ">
-                <p v-text="article.articleTitle" class="title"></p>
-                <p v-text="article.articleContent" class="content"></p>
-              </router-link>
-              <!--<span v-text="article.nickname" class="nickname"></span>-->
-              <span class="nickname">评论:{{article.articleComment}}</span>
-              <span class="nickname">喜欢:{{article.articleLike}}</span>
-            </div>
-            <div class="col-md-4">
-              <img v-bind:src="article.articlePic" class="picture"/>
-            </div>
-          </div>
+
         </b-col>
+
         <b-col cols="4">
           <div>
             <img src="https://ws1.sinaimg.cn/large/00792MPDgy1fwfvktd36xj3080031q2t.jpg"/>
-          </div>
+          </div><hr/>
           <p class="greyFont">个人介绍</p>
           <div class="discription">
-            <p>
-              {{author.description}}
-            </p>
-          </div>
+            <p>{{author.description}}</p>
+          </div><hr/>
+          <div>
+            <a>
+              <img src="/static/img/网格.png" class="icon2"/>
+              <span class="my">他关注的专题/文集/连载</span>
+            </a><br/><br/>
+            <a class="xia">
+              <img src="/static/img/喜欢.png" class="icon3"/>
+              <span class="my">他喜欢的文章</span>
+            </a>
+          </div><hr/>
         </b-col>
       </div>
     </div>
@@ -84,6 +124,17 @@
     }
 </script>
 <style scoped>
+  .my{
+    margin-left: 8px;
+  }
+  .icon2{
+    width: 26px;
+    height: 26px;
+  }
+  .icon3{
+    width: 26px;
+    height: 26px;
+  }
   .picture{
     width: 130px;
     height: 100px;
@@ -96,6 +147,9 @@
   .content{
     font-size: 15px;
     color: grey;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   .nickname{
     font-size: 11px;
@@ -130,6 +184,7 @@
     padding-left: 100px;
     font-size: 14px;
     color: #969696;
+    margin-left: -40px;
   }
   .main-top .follow{
     padding: 8px 0;
@@ -183,5 +238,17 @@
     border-radius: 50%;
     margin-left: -10px;
   }
-
+  li{
+    list-style-type: none;
+  }
+  .meta-block {
+    float: left;
+    font-size: 13px;
+    margin: 0 7px 0 0;
+    padding: 0 7px 0 0;
+    border-right: 1px solid #f0f0f0;
+  }
+  .is{
+    color: gray;
+  }
 </style>
