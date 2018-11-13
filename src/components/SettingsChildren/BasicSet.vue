@@ -1,12 +1,12 @@
 <template>
 <div>
   <div>
-    <img src="/static/img/101.jpg"/>
+    <img :src="user.avatar"/>
     <b-button variant="outline-success sm" class="ghtx">更换头像</b-button>
   </div>
   <div class="nichen">
     <span>昵称</span>
-    <input type="text" value="hhhhhh">
+    <input type="text" :value="user.nickname">
   </div><hr/>
   <div>
     <span>电子邮件</span>
@@ -14,7 +14,8 @@
   </div><hr/>
   <div>
     <span>手机</span>
-    <span class="sjh">181****3952&nbsp;&nbsp;&nbsp;√已验证</span>
+    <!--181****3952&nbsp;&nbsp;&nbsp;√已验证-->
+    <span class="sjh">未知</span>
   </div><hr/>
   <div>
     <span>常用编辑器</span>
@@ -65,6 +66,7 @@
         name: "BasicSet",
       data () {
         return {
+          user: JSON.parse(localStorage.getItem('loginUser')),
           selected: 'second',
           options: [
             { text: '富文本', value: 'first' },

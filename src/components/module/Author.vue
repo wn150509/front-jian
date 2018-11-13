@@ -66,33 +66,33 @@
 
 <style scoped>
   .qb{
-    margin-top: 15px;
-    width: 270px;
-    height: 35px;
-  }
-  .H{
-    width: 280px;
-    display: inline-block;
-  }
-  span{
-    color: darkgray;
-  }
-  .hyp{
-    color: darkgray;
-    margin-left: 130px;
-  }
-  .gz{
-    color: green;
-    font-size: 15px;
-    margin-left: -80px;
-  }
-  .jj{
-    color: darkgray;
-    font-size: 13px;
-  }
-  .tx{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
+margin-top: 15px;
+width: 270px;
+height: 35px;
+}
+.H{
+width: 280px;
+display: inline-block;
+}
+span{
+color: darkgray;
+}
+.hyp{
+color: darkgray;
+margin-left: 130px;
+}
+.gz{
+color: green;
+font-size: 15px;
+margin-left: -80px;
+}
+.jj{
+color: darkgray;
+font-size: 13px;
+}
+.tx{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+}
 </style>

@@ -6,8 +6,6 @@
       </a>
     </div>
     <div class="main">
-
-
       <h4 class="title">
         <div class="normal-title">
           <a class="active" href="sign_in">登录</a>
@@ -17,8 +15,12 @@
           </a>
         </div>
       </h4>
+
       <div class="js-sign-in-container">
-        <form id="new_session" action="/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="5RK+HVp8if7enNxRWV5Pb1FyPQxP/hGZafuWVG7FTC/r25fM/OaBTUOfvjq4KRQ1MmSxgPf437fPiFvCTV7Odw==">
+        <form id="new_session" action="/sessions" accept-charset="UTF-8" method="post">
+          <input name="utf8" type="hidden" value="✓">
+          <input type="hidden" name="authenticity_token"
+                 value="5RK+HVp8if7enNxRWV5Pb1FyPQxP/hGZafuWVG7FTC/r25fM/OaBTUOfvjq4KRQ1MmSxgPf437fPiFvCTV7Odw==">
 
           <!-- 正常登录登录名输入框 -->
           <div class="demo-input-suffix">
@@ -31,7 +33,7 @@
 
           <div class="demo-input-suffix">
             <el-input
-              placeholder="手机号"
+              placeholder="email"
               prefix-icon="el-icon-shoujihao"
               v-model="input21">
             </el-input>
@@ -47,7 +49,6 @@
             <div class="aButton">发送验证码</div>
           </div>
 
-
           <div class="demo-input-suffix">
             <el-input
               type="password"
@@ -62,14 +63,15 @@
             注册
           </button>
 
-          <p class="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守简书<br> <a target="_blank" href="http://www.jianshu.com/p/c44d171298ce">用户协议</a> 和 <a target="_blank" href="http://www.jianshu.com/p/2ov8x3">隐私政策</a> 。</p>
+          <p class="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守简书<br>
+            <a target="_blank" href="http://www.jianshu.com/p/c44d171298ce">用户协议</a>和
+            <a target="_blank" href="http://www.jianshu.com/p/2ov8x3">隐私政策</a>。
+          </p>
 
         </form>
         <!-- 更多注册方式 -->
         <div class="more-sign">
-          <h6>
-            社交帐号直接注册
-          </h6>
+          <h6>社交帐号直接注册</h6>
           <ul>
             <li>
               <a id="weixin" class="weixin" target="_blank">
@@ -82,16 +84,12 @@
               </a>
             </li>
           </ul>
-
         </div>
       </div>
-
     </div>
   </div>
 </template>
 <script>
-
-
   export default {
     name: "Login"
   }

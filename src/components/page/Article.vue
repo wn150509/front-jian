@@ -26,14 +26,14 @@
           <span><b-button size="sm" variant="outline-secondary" class="zz">只看作者</b-button></span>
           <span class="px">按时间正序</span>
           <span>按时间倒序</span><hr/>
-          <div v-for="comment in commentList" :key="comment.id">
+          <div v-for="comment in commentList" :key="comment.comments.commentId">
             <div>
-              <img :src="comment.userAvatar" class="userAvatar">
-              <span class="usernick">{{comment.userNick}}</span>
-              <span class="commenttime">{{comment.commentTime}}</span>
+              <img :src="comment.sysUser.avatar" class="userAvatar">
+              <span class="usernick">{{comment.sysUser.nickname}}</span>
+              <span class="commenttime">{{comment.comments.commentTime}}</span>
             </div>
             <div class="div2">
-              <p>{{comment.commentContent}}</p>
+              <p>{{comment.comments.commentContent}}</p>
             </div>
             <div>
               <span>赞</span>
@@ -54,24 +54,7 @@
             id:this.$route.params.id,
             article:{},
             user:{},
-            commentList:[
-              {
-                'id':1,
-                "userAvatar":"https://upload.jianshu.io/users/upload_avatars/14414923/3bf99397-971c-4e2c-915d-8b14926ac91d?imageMogr2/auto-orient/strip|imageView2/1/w/114/h/114",
-                "userNick":"靈魂丶織舞",
-                "commentContent":"理想中的爱情",
-                "commentTime":"2018.10.21 12:51"
-              },
-              {
-                'id':2,
-                "userAvatar":"https://cdn2.jianshu.io/assets/default_avatar/9-cceda3cf5072bcdd77e8ca4f21c40998.jpg",
-                "userNick":"海边的曼彻斯特q",
-                "commentContent":"如果打算爱一个人，你要想清楚，是否愿意为了他，放弃如上帝般自由的心灵，从此心甘情愿有了羁绊。\n" +
-                "不愿意\n" +
-                "我们谁不是活在自己梦里的人 每时每刻",
-                "commentTime":"2018.10.21 13:41 "
-              }
-            ]
+            commentList:[]
           }
       },
       created(){
@@ -85,6 +68,11 @@
           .get('http://localhost:8080/user/p/'+this.$route.params.id)
           .then(function (response) {
             that.user=response.data.data
+          })
+        this.$http
+          .get('http://localhost:8080/comments/p/'+this.$route.params.id)
+          .then(function (response) {
+            that.commentList=response.data.data
           })
       },
       activated(){

@@ -12,7 +12,7 @@
   <div>
     <span>个人简介</span>
     <b-form-textarea id="textarea1"
-                     v-model="text"
+                     :value="user.description"
                      placeholder="填写你的个人简介"
                      :rows="4"
                      :max-rows="4">
@@ -76,8 +76,8 @@
         name: "PersonSet",
       data(){
           return{
+            user: JSON.parse(localStorage.getItem('loginUser')),
             selected: 'third',
-            text:'',
             text1:'',
             options: [
               { text: '男', value: 'first' },
@@ -97,6 +97,7 @@
     margin-top: 50px;
     width: 100px;
     border-radius: 15px;
+    margin-bottom: 50px;
   }
   .zuhe{
     margin-left: 150px;
